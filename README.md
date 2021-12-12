@@ -1,0 +1,2 @@
+# M5Core2_Avatar_VoiceText_TTS
+M5Core2_Avatar_VoiceText_TTS
