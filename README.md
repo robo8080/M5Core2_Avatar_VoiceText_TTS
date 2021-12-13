@@ -23,8 +23,7 @@ esp32_text_to_speech <https://github.com/kghrlabo/esp32_text_to_speech><br>
 
 ### VoiceText Wev API api キーの設定 ###
 * AudioFileSourceVoiceTextStream.cppの30行目付近、YOUR_TSS_API_KEYを設定してください。<br>
-
-APIキーは。[ここ](https://cloud.voicetext.jp/webapi/ "Title")の「無料利用登録」から申請すれば、メールで送られて来ます。<br>
+APIキーは、[ここ](https://cloud.voicetext.jp/webapi/ "Title")の「無料利用登録」から申請すれば、メールで送られて来ます。<br>
 
 ### 使い方 ###
 * M5Stack Core2のボタンA,B,Cを押すと、それぞれ異なった声でしゃべります。　<br>
