@@ -9,7 +9,7 @@ esp32_text_to_speech <https://github.com/kghrlabo/esp32_text_to_speech><br>
 ---
 
 ### 必要な物 ###
-* [M5Stack Core2](http://www.m5stack.com/ "Title") (M5Stack Core2、M5Stack Core2 for AWSで動作確認をしました。)<br>
+* [M5Stack Core2 または M5Stack Fire](http://www.m5stack.com/ "Title") (M5Stack Core2、M5Stack Core2 for AWS、M5Stack Fireで動作確認をしました。)<br>
 * Arduino IDE (バージョン 1.8.15で動作確認をしました。)<br>
 * [M5Stack-Avatar](https://github.com/meganetaaan/m5stack-avatar/ "Title")ライブラリ(バージョン 0.7.3で動作確認をしました。)<br>
 * [ESP8266Audio](https://github.com/earlephilhower/ESP8266Audio/ "Title")ライブラリ(バージョン 1.9.3で動作確認をしました。)<br><br>

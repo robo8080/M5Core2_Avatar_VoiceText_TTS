@@ -270,6 +270,7 @@ bool AudioOutputI2SLipSync::ConsumeSample(int16_t sample[2])
     ms[LEFTCHANNEL] = ms[RIGHTCHANNEL] = (ttl>>1) & 0xffff;
   }
   #ifdef ESP32
+    aout_level =(int)ms[RIGHTCHANNEL];
     uint32_t s32;
     if (output_mode == INTERNAL_DAC)
     {
@@ -279,7 +280,6 @@ bool AudioOutputI2SLipSync::ConsumeSample(int16_t sample[2])
     }
     else
     {
-	  aout_level =(int)ms[RIGHTCHANNEL];
       s32 = ((Amplify(ms[RIGHTCHANNEL])) << 16) | (Amplify(ms[LEFTCHANNEL]) & 0xffff);
     }
 //"i2s_write_bytes" has been removed in the ESP32 Arduino 2.0.0,  use "i2s_write" instead.

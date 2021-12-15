@@ -1,4 +1,8 @@
-#include <M5Core2.h>
+# if defined(ARDUINO_M5STACK_Core2)
+  #include <M5Core2.h>
+# else
+  #include <M5Stack.h>
+# endif
 #include <Avatar.h>
 
 #include "AudioFileSourceBuffer.h"
@@ -71,7 +75,9 @@ void setup()
 {
   preallocateBuffer = (uint8_t*)ps_malloc(preallocateBufferSize);
   M5.begin(true, false, true);
+# if defined(ARDUINO_M5STACK_Core2) 
   M5.Axp.SetSpkEnable(true);
+# endif
   M5.Lcd.setBrightness(30);
   M5.Lcd.clear();
   M5.Lcd.setTextSize(2);
@@ -91,8 +97,13 @@ void setup()
   M5.Lcd.println("\nConnected");
   
   audioLogger = &Serial;
+# if defined(ARDUINO_M5STACK_Core2) 
   out = new AudioOutputI2SLipSync();
   out->SetPinout(12, 0, 2);           // ピン配列を指定（BCK, LRCK, DATA)BashCopy
+# else
+  out = new AudioOutputI2SLipSync(0,AudioOutputI2SLipSync::INTERNAL_DAC);
+  out->SetGain(0.8);
+# endif
   mp3 = new AudioGeneratorMP3();
   mp3->RegisterStatusCB(StatusCallback, (void*)"mp3");
 
